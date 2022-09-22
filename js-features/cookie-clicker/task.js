@@ -1,3 +1,4 @@
+//Задача 2
 const imgCookie = document.getElementById('cookie');
 
 const click = document.getElementById('clicker__counter');

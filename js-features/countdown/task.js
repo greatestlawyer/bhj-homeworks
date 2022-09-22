@@ -2,9 +2,10 @@
 const addText = function() {
 	const timerCountdown = document.getElementById('timer');
 	timerCountdown.textContent -= 1;
-	if (timerCountdown.textContent <= '0'){
+	if (timerCountdown.textContent === '0'){
 		clearInterval(clearTime);
-		window.alert('Вы победили в конкурсе!');
+		setTimeout(() => {
+			window.alert('Вы победили в конкурсе!')}, 1000)
 	}
 }
 
