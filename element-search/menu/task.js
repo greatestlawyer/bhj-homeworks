@@ -1,11 +1,15 @@
-document.querySelectorAll('.menu__link').forEach(e => {
-  e.addEventListener('click', e => {
-    document.querySelectorAll('.menu_sub').forEach(e => {
-      if(!document.querySelector('.menu_sub').classList.contains('menu_active')) {
-        document.querySelector('.menu_sub').classList.add('menu_active');
-      }
-    });
-  });
-});
+let menuLink = Array.from(document.getElementsByClassName('menu__link'));
 
+for (let i = 0; i < menuLink.length; i++) {
+    if (menuLink[i].closest('li').querySelector('ul')) {
+        let element = menuLink[i].closest('li').querySelector('a');
+        console.log(element);
+        element.addEventListener('click', showMenu);
+    }
+}
 
+function showMenu(e) {
+    e.preventDefault();
+    console.log(this.closest('li').querySelector('ul'));
+    this.closest('li').querySelector('ul').classList.toggle('menu_active');
+}
