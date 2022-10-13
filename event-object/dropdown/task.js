@@ -1,19 +1,27 @@
-const list = document.getElementsByClassName('dropdown__list'),
-      item = document.getElementsByClassName('dropdown__item'),
-      items = Array.from(item),
-      value = document.getElementsByClassName('dropdown__value'),
-      values = Array.from(value);
 
-values.forEach(elem => {
-    elem.addEventListener('click', () => {
-        list.classList.toggle('dropdown__list_active');
-    });
+const allDropDownList = Array.from(document.getElementsByClassName('dropdown__value'));
+const dropdownLink = Array.from(document.getElementsByClassName('dropdown__link'));
 
-    items.forEach(element => {
-        element.addEventListener('click', (e) => {
-            elem.textContent = element.textContent;
-            list.classList.remove('dropdown__list_active');
-            e.preventDefaulft();
-        });
-    });
-});
+function dropDown() {
+    let list = Array.from(document.getElementsByClassName('dropdown__list'));
+    if (list[0].className === "dropdown__list") {
+        list[0].className = "dropdown__list dropdown__list_active";
+    } else {
+        list[0].className = "dropdown__list";
+    }
+    return false;
+}
+
+function clickItem(e) {
+    let dropdownValue = Array.from(document.getElementsByClassName('dropdown__value'));
+    dropdownValue[0].textContent = this.textContent;
+    e.preventDefault();
+    dropDown();
+}
+
+allDropDownList[0].addEventListener('click', dropDown);
+
+for (let i = 0; i < dropdownLink.length; i++) {
+    dropdownLink[i].addEventListener('click', clickItem);
+}
+

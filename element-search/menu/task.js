@@ -13,3 +13,4 @@ function showMenu(e) {
     console.log(this.closest('li').querySelector('ul'));
     this.closest('li').querySelector('ul').classList.toggle('menu_active');
 }
+
