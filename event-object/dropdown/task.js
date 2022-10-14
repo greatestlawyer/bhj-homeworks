@@ -1,4 +1,3 @@
-
 const allDropDownList = Array.from(document.getElementsByClassName('dropdown__value'));
 const dropdownLink = Array.from(document.getElementsByClassName('dropdown__link'));
 
@@ -24,4 +23,6 @@ allDropDownList[0].addEventListener('click', dropDown);
 for (let i = 0; i < dropdownLink.length; i++) {
     dropdownLink[i].addEventListener('click', clickItem);
 }
+
+
 
