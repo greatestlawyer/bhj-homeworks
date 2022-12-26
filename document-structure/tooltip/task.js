@@ -1,5 +1,5 @@
 const allTips = Array.from(document.getElementsByClassName('has-tooltip'));
-let lastElement
+
 
 function toolTipsActive(e) {
     e.preventDefault();
@@ -9,6 +9,7 @@ function toolTipsActive(e) {
     }
     let tipText = this.title;
     this.insertAdjacentHTML('afterend', `<div class="tooltip tooltip_active">${tipText}</div>`);
+
 }
 
 

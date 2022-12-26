@@ -1,5 +1,5 @@
 const xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://netology-slow-rest.herokuapp.com/poll.php');
+xhr.open('GET', 'https://students.netoservices.ru/nestjs-backend/poll');
 xhr.responseType = 'json';
 xhr.send();
 const pollTitle = document.getElementById('poll__title');

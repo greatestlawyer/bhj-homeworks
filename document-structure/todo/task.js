@@ -12,6 +12,7 @@ function addTask(e) {
         document.getElementById('task__input').value = "";
         let taskRemove = document.getElementsByClassName('task__remove')[Array.from(document.getElementsByClassName('task__remove')).length - 1];
         taskRemove.addEventListener('click', deleteTask);
+        e.preventDefault();
     }
 
 }
