@@ -7,7 +7,7 @@ function submitForm(e) {
     e.preventDefault();
     const form = new FormData(submitFile);
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'https://students.netoservices.ru/nestjs-backend/upload', true);
+    xhr.open('POST', '', true);
     xhr.addEventListener('progress', loaderForm);
     xhr.send(form);
 }
@@ -20,3 +20,5 @@ function loaderForm() {
 }
 
 form.addEventListener('submit', submitForm);
+
+//https://students.netoservices.ru/nestjs-backend/upload
