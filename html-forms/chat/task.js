@@ -22,7 +22,7 @@ function textMessage(e) {
 }
 
 function submitMessage(e) {
-    if (e.key === 'Enter' & newMessage !== "") {
+    if (e.key === 'Enter' & newMessage.trim() !== "") {
         messages.innerHTML += `
     <div class="message message_client">
     <div class="message__time">${da} ${mo} ${hour}:${minute} </div>
